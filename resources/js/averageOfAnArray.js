@@ -8,7 +8,6 @@ const filterArrForNumbers = arr => arr.filter(value => !isNaN(value));
 // Then divides it by the length of the array to find the average.
 const arrAvg = arr => arr.reduce((a,b) => a + parseInt(b), 0) / arr.length;
 
-
 const displaySection = document.getElementById('arrayAverage');
 
 // Writing the markup for the basic display with a submit button.
@@ -17,7 +16,7 @@ const markup = `
   <button id="calculateAverage">Calculate Average</button>
 `;
 // Writing the markup for the answer area of the display.
-const answerMarkup = `<div id="answer">${arrAvg(filterArrForNumbers(testArr))}</div>`
+const answerMarkup = `<div id="answer">${arrAvg(filterArrForNumbers(testArr)).toFixed(7)}</div>`
 // Adding the content inside the display section before the first child.
 displaySection.insertAdjacentHTML('afterbegin', markup);
 
